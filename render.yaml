@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: scorecard-backend-docker
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    repo: https://github.com/muvvadhanush/algoleap-agentforce-scorecard
+    branch: main
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: FRONTEND_URL
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DIRECT_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
