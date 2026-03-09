@@ -1,0 +1,30 @@
+{
+    "name": "Algoleap Agentforce Readiness Scorecard",
+    "short_name": "AF Scorecard",
+    "description": "Free 3-minute AI readiness assessment for Salesforce Agentforce. Know exactly where your data stands across 7 key dimensions.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3C8943",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "categories": [
+        "business",
+        "productivity"
+    ],
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "/algoleap-logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

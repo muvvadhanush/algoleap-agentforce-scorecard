@@ -1,0 +1,1018 @@
+{
+    "personas": [
+        {
+            "id": "business",
+            "icon": "📈",
+            "label": "Revenue & CX Leader",
+            "sub": "Sales · Service · Marketing · Revenue Ops",
+            "color": "#1565C0",
+            "bg": "#E3F2FD",
+            "desc": "For leaders focused on revenue growth, customer experience, and team productivity.",
+            "tags": [
+                "VP Sales",
+                "VP Customer Service",
+                "VP Marketing",
+                "CRO",
+                "VP Revenue Ops",
+                "Director Digital Channels"
+            ]
+        },
+        {
+            "id": "technical",
+            "icon": "⚙️",
+            "label": "Platform & Architecture Owner",
+            "sub": "CRM · Salesforce · Enterprise Apps · Business Systems",
+            "color": "#2D5A27",
+            "bg": "#E8F5E3",
+            "desc": "For technical leaders who own the Salesforce platform, integrations, and data architecture.",
+            "tags": [
+                "Head of CRM",
+                "Salesforce Architect",
+                "Director Enterprise Apps",
+                "Head of Business Systems",
+                "Director CRM"
+            ]
+        },
+        {
+            "id": "ai",
+            "icon": "🧠",
+            "label": "AI & Innovation Leader",
+            "sub": "AI Strategy · Automation · Digital Transformation",
+            "color": "#6A1B9A",
+            "bg": "#F3E5F5",
+            "desc": "For leaders evaluating AI readiness and driving intelligent automation initiatives.",
+            "tags": [
+                "Director AI/ML",
+                "Head of Intelligent Automation",
+                "Director Digital Transformation",
+                "Head of Innovation"
+            ]
+        }
+    ],
+    "clouds": [
+        "Sales Cloud",
+        "Service Cloud",
+        "Marketing Cloud",
+        "Commerce Cloud",
+        "Experience Cloud",
+        "Data Cloud",
+        "Other"
+    ],
+    "dimensions": {
+        "business": [
+            {
+                "id": "completeness",
+                "name": "Customer Context Availability",
+                "icon": "👤",
+                "q": "When your reps, agents, or marketers engage a customer, do they have the full picture — or are they flying blind?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Flying Blind",
+                        "d": "Reps frequently lack basic customer info. Key fields like company size, past purchases, and engagement history are missing for most accounts."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Partial View",
+                        "d": "Some customer data exists but reps regularly need to ask customers for information that should already be in the system."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Decent Coverage",
+                        "d": "Most customer records have core info, but secondary details (buying committee, product usage, support history) have gaps."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Strong Context",
+                        "d": "Reps and agents can quickly access a comprehensive customer profile. Occasional gaps in cross-sell/upsell data."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Full 360 View",
+                        "d": "Complete customer context at every touchpoint. Reps, service agents, and marketers all work from the same rich, current profile."
+                    }
+                ]
+            },
+            {
+                "id": "accuracy",
+                "name": "Data Trust & Reliability",
+                "icon": "🎯",
+                "q": "Do your teams trust the data in Salesforce? Or do they maintain their own spreadsheets because the CRM \"can't be trusted\"?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Low Trust",
+                        "d": "Teams widely distrust CRM data. Managers maintain shadow spreadsheets. Pipeline forecasts are unreliable."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Spotty",
+                        "d": "Data is sometimes accurate but reps frequently encounter wrong contacts, stale opportunities, or duplicate accounts."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Acceptable",
+                        "d": "Data is generally reliable for day-to-day work, but periodic cleanup campaigns are needed."
+                    },
+                    {
+                        "s": 4,
+                        "l": "High Trust",
+                        "d": "Teams rely on Salesforce as the source of truth. Duplicates are rare. Forecasts are within 10% accuracy."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Gold Standard",
+                        "d": "Data is continuously validated and enriched. Leadership makes decisions based on CRM data with confidence."
+                    }
+                ]
+            },
+            {
+                "id": "connectivity",
+                "name": "Cross-Team Visibility",
+                "icon": "🔗",
+                "q": "Can Sales see what Service is handling? Can Marketing see what Sales is closing? Or does each team operate with a different version of the customer?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Siloed Teams",
+                        "d": "Each department has its own customer data. No shared view. Handoffs are manual and error-prone."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Some Sharing",
+                        "d": "A few integrations exist but most cross-team data requires manual lookup or email requests."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Partially Connected",
+                        "d": "Core systems share data but there are blind spots. Sales can't easily see open support cases."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Well Connected",
+                        "d": "Most team data flows into Salesforce. Cross-functional visibility is good. Minor real-time sync gaps."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Unified Operations",
+                        "d": "All teams work from the same connected customer view in real-time. Handoffs are seamless. No data silos."
+                    }
+                ]
+            },
+            {
+                "id": "identity",
+                "name": "Customer Recognition",
+                "icon": "🪪",
+                "q": "When a customer calls Support, emails Marketing, and speaks to their Account Exec — does your organisation recognise them as the same person?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Recognition",
+                        "d": "Customers are treated as strangers across channels. Duplicate profiles are widespread."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Basic",
+                        "d": "Email matching works sometimes, but customers with multiple emails are often treated as separate people."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Developing",
+                        "d": "Most customers recognised within a single channel but cross-channel recognition is inconsistent."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Strong",
+                        "d": "Customers consistently recognised across most touchpoints. Unified profiles cover the majority of your base."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Seamless",
+                        "d": "Every customer interaction connected to a single complete profile regardless of channel or touchpoint."
+                    }
+                ]
+            },
+            {
+                "id": "semantic",
+                "name": "Process Documentation",
+                "icon": "📋",
+                "q": "If your top-performing rep or service agent left tomorrow, could an AI agent replicate their approach using what's documented in your systems?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Tribal Knowledge",
+                        "d": "Key processes live in people's heads. No documentation of what makes top performers successful."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Informal",
+                        "d": "Some playbooks exist but they're outdated. New hires learn by shadowing, not from systems."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Partially Documented",
+                        "d": "Core processes are documented but edge cases and best practices are not captured."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Well Documented",
+                        "d": "Clear process documentation, standardised field usage, and playbooks a new team member could follow."
+                    },
+                    {
+                        "s": 5,
+                        "l": "AI-Transferable",
+                        "d": "Processes, decision trees, and knowledge documented in a way that could train an AI agent to replicate human judgment."
+                    }
+                ]
+            },
+            {
+                "id": "governance",
+                "name": "Operational Discipline",
+                "icon": "🛡️",
+                "q": "Who is responsible for keeping your customer data accurate over time? Is there a process, or does data quality gradually decay?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Ownership",
+                        "d": "Nobody owns data quality. CRM data degrades steadily. Annual cleanups happen too late."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Reactive",
+                        "d": "Problems fixed when they surface. No proactive process or monitoring."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Emerging",
+                        "d": "Someone is responsible for data quality, but enforcement is inconsistent."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Proactive",
+                        "d": "Clear data ownership with regular reviews. Quality standards are enforced. Issues caught early."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Continuous",
+                        "d": "Automated data quality monitoring with dashboards. Ownership is clear at every level. Quality is a KPI."
+                    }
+                ]
+            },
+            {
+                "id": "usecase",
+                "name": "AI Vision & Readiness",
+                "icon": "🤖",
+                "q": "Do you have a clear picture of where AI agents would make the biggest impact on your revenue or customer experience — and is the data there to support it?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Clarity",
+                        "d": "AI is interesting in theory but there's no specific idea of where it would help your team day-to-day."
+                    },
+                    {
+                        "s": 2,
+                        "l": "General Interest",
+                        "d": "You know AI could help (e.g., \"automate customer service\") but haven't defined specifics."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Use Cases Identified",
+                        "d": "2–3 specific use cases defined with business sponsors, but data feasibility is unclear."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Business Case Ready",
+                        "d": "Priority use cases have ROI estimates, executive sponsorship, and the supporting data largely exists."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Ready to Execute",
+                        "d": "Use cases scoped, budget allocated, success metrics defined, and supporting data validated."
+                    }
+                ]
+            }
+        ],
+        "technical": [
+            {
+                "id": "completeness",
+                "name": "Data Completeness",
+                "icon": "📊",
+                "q": "Are your key Salesforce objects (Account, Contact, Opportunity, Case) fully populated across required fields?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Critical Gaps",
+                        "d": "Less than 50% of key fields populated across core objects. No validation rules enforcing mandatory fields."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Partial",
+                        "d": "50–70% populated. Significant gaps in Contact or Opportunity data. Sporadic validation rules."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Moderate",
+                        "d": "70–85% populated. Minor gaps in secondary objects. Some validation rules active on key fields."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Strong",
+                        "d": "85–95% populated. Consistent across all core objects. Validation rules enforced on most required fields."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Excellent",
+                        "d": "95%+ populated with validation rules enforcing completeness. Automated data enrichment via APIs or Data Cloud."
+                    }
+                ]
+            },
+            {
+                "id": "accuracy",
+                "name": "Data Accuracy",
+                "icon": "🎯",
+                "q": "When was your last data quality audit? What is your duplicate rate and error frequency across core objects?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Audits",
+                        "d": "No formal data quality process. Duplicate rate unknown. No dedup tools configured."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Ad Hoc",
+                        "d": "Occasional cleanup campaigns. Estimated duplicate rate above 15%. Manual dedup only."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Periodic",
+                        "d": "Quarterly audits. Duplicate rate 5–15%. Basic Salesforce Duplicate Management enabled."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Proactive",
+                        "d": "Monthly audits with third-party tools. Duplicate rate under 5%. Automated matching rules active."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Automated",
+                        "d": "Real-time validation and enrichment. Automated dedup with continuous monitoring. Error rate under 2%."
+                    }
+                ]
+            },
+            {
+                "id": "connectivity",
+                "name": "Data Connectivity & Integration",
+                "icon": "🔗",
+                "q": "How many source systems feed into Salesforce? Are they integrated via APIs, middleware, or manual processes?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Fully Siloed",
+                        "d": "5+ disconnected systems. No integration to Salesforce. Customer data fragmented across platforms."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Mostly Manual",
+                        "d": "3–5 systems. Data moved via CSV imports, Data Loader, or manual entry. No real-time sync."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Partially Integrated",
+                        "d": "Core systems (ERP, marketing) connected via REST APIs. Some manual processes remain."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Well Connected",
+                        "d": "Most systems integrated via MuleSoft or middleware. Near real-time data flow."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Unified",
+                        "d": "All systems connected in real-time via Data Cloud or enterprise integration layer."
+                    }
+                ]
+            },
+            {
+                "id": "identity",
+                "name": "Identity Resolution",
+                "icon": "🪪",
+                "q": "Can you reliably match a single customer across all systems using deterministic or probabilistic matching?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Matching",
+                        "d": "No unified customer ID. Duplicate profiles widespread. No merge process or matching rules."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Basic",
+                        "d": "Email-based matching only. Many orphaned records. Manual merge on a case-by-case basis."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Developing",
+                        "d": "Matching rules configured but not validated at scale. Partial Customer 360 view available."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Advanced",
+                        "d": "Multi-key matching (email + phone + name) with fuzzy logic. Strong unified profiles for most records."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Mature",
+                        "d": "Data Cloud identity resolution fully active with rulesets and reconciliation. Golden record per customer."
+                    }
+                ]
+            },
+            {
+                "id": "semantic",
+                "name": "Metadata & Semantic Readiness",
+                "icon": "🏗️",
+                "q": "Is your data model documented? Are fields labelled and described clearly enough for AI/LLM consumption?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Undocumented",
+                        "d": "No data dictionary. Field labels are cryptic (e.g., Custom_Field_23__c). Heavy tribal knowledge dependency."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Informal",
+                        "d": "Some documentation exists but is outdated. No standard naming conventions."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Documented",
+                        "d": "Data dictionary exists and is partially current. Field descriptions populated on key objects."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Well Structured",
+                        "d": "Current data dictionary with naming conventions enforced. Semantic layer emerging for AI consumption."
+                    },
+                    {
+                        "s": 5,
+                        "l": "AI-Ready",
+                        "d": "Semantic model defined in Data Cloud with DMOs. Fields labelled and described for agent grounding."
+                    }
+                ]
+            },
+            {
+                "id": "governance",
+                "name": "Governance Maturity",
+                "icon": "🛡️",
+                "q": "Do you have data ownership, quality SLAs, change management, and refresh cadences defined and enforced?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "None",
+                        "d": "No governance policies. Anyone can modify schema or data. No change management process."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Informal",
+                        "d": "Basic admin controls and profiles. No documented ownership or quality rules. Reactive fixes only."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Emerging",
+                        "d": "Data stewards identified. Basic quality rules exist but enforcement is inconsistent."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Established",
+                        "d": "Formal governance program with ownership, quality SLAs, and regular review cycles. CoE emerging."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Optimised",
+                        "d": "CoE-driven governance with automated monitoring, compliance auditing, release management, and continuous improvement."
+                    }
+                ]
+            },
+            {
+                "id": "usecase",
+                "name": "AI Use Case Clarity",
+                "icon": "🤖",
+                "q": "Have you identified which processes Agentforce would automate, and is the supporting data model and data available?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Vision",
+                        "d": "No specific AI use cases identified. General interest in \"doing something with AI\" but no scoped requirements."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Exploring",
+                        "d": "High-level ideas (e.g., \"chatbot for service\") but no defined use cases, data mapping, or success metrics."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Defined",
+                        "d": "2–3 use cases identified with business sponsors. Agent topics conceptualised but data feasibility not assessed."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Validated",
+                        "d": "Use cases prioritised with ROI estimates. Data sources mapped. Agent actions and topics designed."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Ready to Build",
+                        "d": "Use cases scoped with data mapping, prompt templates, and test scenarios. Executive sponsor and budget aligned."
+                    }
+                ]
+            }
+        ],
+        "ai": [
+            {
+                "id": "completeness",
+                "name": "Training Data Availability",
+                "icon": "📊",
+                "q": "Does your organisation have sufficient, high-quality data to train and ground AI agents — or will agents have to work with incomplete context?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Insufficient",
+                        "d": "Key data fields less than 50% populated. AI models would be trained on sparse, unreliable data."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Partial",
+                        "d": "Core data exists but significant gaps would cause AI agents to lack context in 30%+ of interactions."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Workable",
+                        "d": "Most critical data is available. AI agents would handle standard scenarios well but struggle with edge cases."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Strong",
+                        "d": "Rich dataset across core objects. AI agents would have sufficient context for 90%+ of use cases."
+                    },
+                    {
+                        "s": 5,
+                        "l": "AI-Optimised",
+                        "d": "Comprehensive, enriched data with historical patterns. Ideal foundation for AI training and real-time grounding."
+                    }
+                ]
+            },
+            {
+                "id": "accuracy",
+                "name": "Data Signal Reliability",
+                "icon": "🎯",
+                "q": "AI models amplify data quality — good data produces great AI, bad data produces confidently wrong AI. How reliable are your data signals?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Unreliable",
+                        "d": "High duplicate rates, stale records, and inconsistent data. AI outputs would be untrustworthy."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Noisy",
+                        "d": "Enough noise in the data that AI predictions and recommendations would have low confidence scores."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Acceptable",
+                        "d": "Data is mostly accurate. AI models would perform reasonably but benefit from a cleanup sprint."
+                    },
+                    {
+                        "s": 4,
+                        "l": "High Fidelity",
+                        "d": "Clean, deduplicated data with automated validation. Strong foundation for reliable AI outputs."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Precision-Grade",
+                        "d": "Continuously validated and enriched data. AI models can operate with high confidence and minimal hallucination risk."
+                    }
+                ]
+            },
+            {
+                "id": "connectivity",
+                "name": "Data Unification for AI",
+                "icon": "🔗",
+                "q": "AI agents need access to data across all systems to provide intelligent, contextual responses. How unified is your data landscape?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Fragmented",
+                        "d": "Data lives in 5+ disconnected systems. AI would only see a fraction of the customer context."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Partially Accessible",
+                        "d": "Some systems are connected but AI agents would have blind spots in critical areas."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Core Connected",
+                        "d": "Primary systems integrated. AI can access most critical data but some sources remain isolated."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Broadly Unified",
+                        "d": "Most data sources feed into a central platform. AI agents can access comprehensive context in real-time."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Fully Unified",
+                        "d": "All data sources connected via Data Cloud. AI agents have complete, real-time context."
+                    }
+                ]
+            },
+            {
+                "id": "identity",
+                "name": "Entity Resolution for AI Context",
+                "icon": "🪪",
+                "q": "AI agents need to know who they're interacting with. Can your systems resolve a person, account, or entity to a single unified identity?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Resolution",
+                        "d": "No unified identity. AI agents would treat the same customer as different entities across interactions."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Basic Matching",
+                        "d": "Simple email-based matching. AI recognises returning customers only through exact email matches."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Improving",
+                        "d": "Multi-field matching in place. AI can identify most customers but cross-channel gaps remain."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Strong Resolution",
+                        "d": "Probabilistic matching with fuzzy logic. AI agents can reliably identify customers across most touchpoints."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Intelligent Identity",
+                        "d": "Real-time identity resolution with continuous learning. AI agents always know exactly who they're engaging with."
+                    }
+                ]
+            },
+            {
+                "id": "semantic",
+                "name": "Knowledge Structure for AI",
+                "icon": "🏗️",
+                "q": "Can an AI agent understand what your data means? Is your data model structured and labelled in a way that LLMs can interpret correctly?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Unstructured",
+                        "d": "No data dictionary. Field names are cryptic. An AI model would misinterpret most custom fields."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Loosely Structured",
+                        "d": "Some naming conventions but inconsistent. AI would require heavy prompt engineering to work around gaps."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Structured",
+                        "d": "Data dictionary exists. Key fields are well-labelled. AI can interpret core objects but may struggle with custom data."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Semantically Rich",
+                        "d": "Clear naming conventions, field descriptions, and relationships documented. AI models can ground responses accurately."
+                    },
+                    {
+                        "s": 5,
+                        "l": "LLM-Optimised",
+                        "d": "Semantic model defined with Data Model Objects (DMOs). Fields designed for AI consumption with explicit context."
+                    }
+                ]
+            },
+            {
+                "id": "governance",
+                "name": "AI Governance & Trust Layer",
+                "icon": "🛡️",
+                "q": "AI in production needs guardrails. Do you have the governance foundation to ensure AI agents operate safely, accurately, and compliantly?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "No Framework",
+                        "d": "No data governance. No AI policy. Deploying AI agents would carry significant risk of inaccurate or harmful outputs."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Ad Hoc",
+                        "d": "Basic data controls exist but no AI-specific governance. No process for monitoring AI output quality."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Emerging",
+                        "d": "Data governance in place. Starting to think about AI guardrails, prompt review, and output monitoring."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Structured",
+                        "d": "Formal data governance plus AI guardrails defined. Output monitoring planned. Compliance considerations addressed."
+                    },
+                    {
+                        "s": 5,
+                        "l": "AI-Governed",
+                        "d": "Comprehensive AI governance: prompt review, output monitoring, bias detection, escalation rules, and continuous tuning."
+                    }
+                ]
+            },
+            {
+                "id": "usecase",
+                "name": "AI Use Case Maturity",
+                "icon": "🤖",
+                "q": "Where are you on the AI adoption curve? Have you moved from \"AI is interesting\" to \"here's exactly what we need an agent to do\"?",
+                "levels": [
+                    {
+                        "s": 1,
+                        "l": "Curiosity Stage",
+                        "d": "General interest in AI but no specific Salesforce use cases. No budget or sponsor identified."
+                    },
+                    {
+                        "s": 2,
+                        "l": "Ideation",
+                        "d": "Brainstorming potential AI use cases. Some internal discussions but no formal evaluation or prioritisation."
+                    },
+                    {
+                        "s": 3,
+                        "l": "Evaluation",
+                        "d": "Specific use cases under evaluation. Comparing Agentforce vs other AI tools. Business case being developed."
+                    },
+                    {
+                        "s": 4,
+                        "l": "Planning",
+                        "d": "Use cases prioritised with ROI projections. Evaluating implementation partners. Budget conversations underway."
+                    },
+                    {
+                        "s": 5,
+                        "l": "Execution Ready",
+                        "d": "Use cases approved with budget allocated. Implementation partner shortlisted. Success metrics and timeline defined."
+                    }
+                ]
+            }
+        ]
+    },
+    "tiers": [
+        {
+            "min": 28,
+            "label": "Ready to Pilot",
+            "color": "#2D7A3A",
+            "bg": "#E8F5E3"
+        },
+        {
+            "min": 21,
+            "label": "Foundation Strong",
+            "color": "#5B8C3F",
+            "bg": "#F0F7EC"
+        },
+        {
+            "min": 15,
+            "label": "Gaps to Address",
+            "color": "#D4930D",
+            "bg": "#FFF8E1"
+        },
+        {
+            "min": 0,
+            "label": "Start with Data First",
+            "color": "#C62828",
+            "bg": "#FFEBEE"
+        }
+    ],
+    "industryUseCases": {
+        "Enterprise Services & Professional Services": [
+            "Client 360 Agent",
+            "Case Deflection Automation",
+            "Automated Proposals",
+            "AI Scheduling Assistant"
+        ],
+        "Manufacturing & Industrial": [
+            "Dealer Portal Agent",
+            "Predictive Maintenance Agent",
+            "Order Management Agent"
+        ],
+        "Technology & SaaS": [
+            "Churn Prediction Agent",
+            "Automated Onboarding",
+            "Self-Service Support Agent"
+        ],
+        "Financial Services & Insurance": [
+            "Compliance Agent",
+            "KYC Automation",
+            "Claim Processing Agent",
+            "Advisor Assistant"
+        ],
+        "Healthcare & Life Sciences": [
+            "Patient Scheduling Agent",
+            "Care Plan Automation",
+            "Referral Management Agent"
+        ],
+        "Retail & Consumer Goods": [
+            "Personalised Shopping Agent",
+            "Returns Automation",
+            "Loyalty Programme Agent"
+        ]
+    },
+    "tierDescriptions": {
+        "business": {
+            "28": "Your organisation has the data foundation and business alignment to launch Agentforce. The next step is selecting your highest-impact use case and getting the first agent live — typically within 6–8 weeks.",
+            "21": "You have a solid base, but specific gaps in data quality or cross-team visibility could undermine AI agent performance. A short, targeted sprint (2–4 weeks) to close these gaps would set you up for a successful launch.",
+            "15": "There are meaningful data and process gaps that would limit Agentforce ROI. A Data Readiness Assessment is recommended before investing in AI agents.",
+            "0": "Your customer data needs significant work before AI agents can deliver reliable value. The good news: fixing these foundations will also improve your team's productivity today."
+        },
+        "technical": {
+            "28": "Your Salesforce platform and data architecture are ready for Agentforce. Move to agent design, prompt engineering, and deployment. Focus on selecting the right first use case and building your action library.",
+            "21": "Your platform is well-positioned but specific technical gaps need attention. A targeted Data Cloud sprint (2–4 weeks) can close these before agent deployment.",
+            "15": "Significant data architecture gaps exist. Launching Agentforce now risks unreliable agent responses and technical debt. A structured Data Readiness Assessment is recommended.",
+            "0": "Substantial data infrastructure work is required before Agentforce can deliver value. Prioritise a Data Cloud Foundation engagement to unify sources, resolve identities, and establish governance."
+        },
+        "ai": {
+            "28": "Your data maturity and AI governance position you to deploy Agentforce with confidence. Move directly to agent design, prompt development, and pilot deployment.",
+            "21": "Your AI ambition is strong and the data foundation is building. Closing specific gaps in data unification or governance will significantly improve AI agent reliability and ROI.",
+            "15": "Your AI vision is ahead of your data reality. Deploying AI agents now would risk poor outputs and stakeholder disappointment. Invest in data readiness first.",
+            "0": "The data infrastructure to support AI agents is not yet in place. Before evaluating Agentforce or any AI tool, establish a data unification and governance foundation."
+        }
+    },
+    "nextSteps": {
+        "business": {
+            "28": [
+                {
+                    "t": "Agent Impact Workshop",
+                    "d": "Identify the 3 highest-ROI processes for AI automation with your leadership team. → Agentforce Agent Development (Phase 3)"
+                },
+                {
+                    "t": "Quick-Start Pilot (6–8 weeks)",
+                    "d": "Get your first agent live — case deflection, lead qualification, or automated scheduling."
+                },
+                {
+                    "t": "Measure & Scale",
+                    "d": "Define success metrics, monitor agent performance, and expand to additional use cases."
+                }
+            ],
+            "21": [
+                {
+                    "t": "Targeted Data Sprint (2–4 weeks)",
+                    "d": "Close the specific gaps in your weaker dimensions to strengthen the AI foundation. → Data Cloud Foundation + Agent Development (Phases 2–3)"
+                },
+                {
+                    "t": "Use Case Prioritisation",
+                    "d": "Align your top AI use cases to where your data is strongest for fastest time-to-value."
+                },
+                {
+                    "t": "Phased Pilot",
+                    "d": "Launch one agent on your strongest data domain, prove value, then expand."
+                }
+            ],
+            "15": [
+                {
+                    "t": "Data Readiness Assessment",
+                    "d": "A structured 2-week assessment to understand exactly where your gaps are. → AI & Data Readiness Assessment + Data Cloud Foundation (Phases 1–2)"
+                },
+                {
+                    "t": "Cross-Team Data Alignment",
+                    "d": "Break down silos between Sales, Service, and Marketing to build a unified customer view."
+                },
+                {
+                    "t": "AI Roadmap Development",
+                    "d": "Build a realistic 6–12 month plan that sequences data fixes before AI deployment."
+                }
+            ],
+            "0": [
+                {
+                    "t": "Full Data Readiness Assessment",
+                    "d": "A comprehensive effort to unify customer data, establish ownership, and build the AI base. → Strategy & Advisory + Digital Transformation (Phases 1–2)"
+                },
+                {
+                    "t": "CRM Health Check",
+                    "d": "Before AI, ensure your Salesforce instance is delivering value to your teams today."
+                },
+                {
+                    "t": "Quick Wins First",
+                    "d": "Identify immediate improvements while building toward longer-term AI readiness."
+                }
+            ]
+        },
+        "technical": {
+            "28": [
+                {
+                    "t": "Agentforce Quick Start",
+                    "d": "Move to agent design: topics, actions, prompt templates. Target first agent live in 6–8 weeks. → Phase 3"
+                },
+                {
+                    "t": "Agent Action Library",
+                    "d": "Build reusable custom actions (data quality checks, multi-system retrieval, document generation)."
+                },
+                {
+                    "t": "Advanced Architecture",
+                    "d": "Explore multi-agent orchestration, custom LWC integration, and cross-cloud agent capabilities."
+                }
+            ],
+            "21": [
+                {
+                    "t": "Data Cloud Sprint (2–4 weeks)",
+                    "d": "Close specific gaps in identity resolution, semantic modelling, or data connectivity. → Phases 2–3"
+                },
+                {
+                    "t": "Agentforce Use Case Scoping",
+                    "d": "Design agent topics, actions, and guardrails aligned to your data model."
+                },
+                {
+                    "t": "Quick Start + Foundation",
+                    "d": "Combined 8–12 week engagement: fix gaps and deploy first agent."
+                }
+            ],
+            "15": [
+                {
+                    "t": "Data Cloud Foundation (4–6 weeks)",
+                    "d": "Unify data sources, build identity resolution, configure DMOs, establish governance. → Phases 1–2"
+                },
+                {
+                    "t": "Architecture Review",
+                    "d": "Assess your integration landscape and data model for Agentforce readiness."
+                },
+                {
+                    "t": "Governance Framework",
+                    "d": "Establish data ownership, quality SLAs, and change management before adding AI."
+                }
+            ],
+            "0": [
+                {
+                    "t": "Full Data Readiness Assessment (2 weeks)",
+                    "d": "Map all data sources, assess quality across 7 dimensions, build remediation roadmap. → Phases 1–2"
+                },
+                {
+                    "t": "Data Cloud Foundation (6–8 weeks)",
+                    "d": "Multi-source integration, identity resolution, semantic modelling, governance implementation."
+                },
+                {
+                    "t": "Platform Optimisation",
+                    "d": "Address technical debt and data model issues before layering AI capabilities."
+                }
+            ]
+        },
+        "ai": {
+            "28": [
+                {
+                    "t": "Agentforce Accelerated Build",
+                    "d": "Your data is AI-ready. Move directly to agent design, prompt engineering, and deployment. → Phase 3"
+                },
+                {
+                    "t": "AI Governance Framework",
+                    "d": "Implement output monitoring, escalation rules, and continuous tuning for production AI."
+                },
+                {
+                    "t": "Innovation Pipeline",
+                    "d": "Build an AI use case backlog and prioritisation framework for ongoing agent expansion."
+                }
+            ],
+            "21": [
+                {
+                    "t": "AI Readiness Sprint (2–4 weeks)",
+                    "d": "Close specific data gaps that would limit AI agent accuracy and reliability. → Phases 2–3"
+                },
+                {
+                    "t": "Agentforce Evaluation Workshop",
+                    "d": "Compare Agentforce capabilities against your use cases and validate technical feasibility."
+                },
+                {
+                    "t": "Pilot Design",
+                    "d": "Design a controlled pilot with clear success metrics and stakeholder alignment."
+                }
+            ],
+            "15": [
+                {
+                    "t": "Data-First AI Strategy",
+                    "d": "Build the data infrastructure needed to support reliable AI. → Phases 1–2"
+                },
+                {
+                    "t": "AI Maturity Assessment",
+                    "d": "Evaluate your readiness across data, process, people, and technology dimensions."
+                },
+                {
+                    "t": "Phased AI Roadmap",
+                    "d": "Sequence data improvements and AI deployments for maximum ROI over 6–12 months."
+                }
+            ],
+            "0": [
+                {
+                    "t": "Data Foundation Before AI",
+                    "d": "Your AI ambition needs a data foundation. Invest in unifying and governing your data first. → Phases 1–2"
+                },
+                {
+                    "t": "AI Readiness Baseline",
+                    "d": "Establish where you stand today across data maturity, process documentation, and governance."
+                },
+                {
+                    "t": "Quick Win Identification",
+                    "d": "Find simpler automation wins that deliver value now while building toward AI readiness."
+                }
+            ]
+        }
+    }
+}
