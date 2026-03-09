@@ -4,64 +4,70 @@ import prisma from "../lib/db.js";
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 export async function generatePdf(shareId: string): Promise<Buffer> {
-    // Verify the assessment exists
-    const assessment = await prisma.assessment.findUnique({
-        where: { shareId },
+  // Verify the assessment exists
+  const assessment = await prisma.assessment.findUnique({
+    where: { shareId },
+  });
+
+  if (!assessment) {
+    throw new Error("Assessment not found");
+  }
+
+  // Generate an HTML report page
+  const html = buildReportHtml(assessment);
+
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || "/usr/bin/google-chrome-stable",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage", // Crucial for memory issues on Docker/Render
+      "--disable-gpu",
+    ],
+  });
+
+  try {
+    const page = await browser.newPage();
+    await page.setContent(html, { waitUntil: "networkidle0" });
+
+    const pdfBuffer = await page.pdf({
+      format: "A4",
+      margin: { top: "40px", right: "40px", bottom: "40px", left: "40px" },
+      printBackground: true,
     });
 
-    if (!assessment) {
-        throw new Error("Assessment not found");
-    }
-
-    // Generate an HTML report page
-    const html = buildReportHtml(assessment);
-
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-
-    try {
-        const page = await browser.newPage();
-        await page.setContent(html, { waitUntil: "networkidle0" });
-
-        const pdfBuffer = await page.pdf({
-            format: "A4",
-            margin: { top: "40px", right: "40px", bottom: "40px", left: "40px" },
-            printBackground: true,
-        });
-
-        return Buffer.from(pdfBuffer);
-    } finally {
-        await browser.close();
-    }
+    return Buffer.from(pdfBuffer);
+  } finally {
+    await browser.close();
+  }
 }
 
 function buildReportHtml(assessment: any): string {
-    const scores = typeof assessment.scores === "string"
-        ? JSON.parse(assessment.scores)
-        : assessment.scores;
+  const scores = typeof assessment.scores === "string"
+    ? JSON.parse(assessment.scores)
+    : assessment.scores;
 
-    const dims = [
-        "completeness", "accuracy", "connectivity",
-        "identity", "semantic", "governance", "usecase"
-    ];
+  const dims = [
+    "completeness", "accuracy", "connectivity",
+    "identity", "semantic", "governance", "usecase"
+  ];
 
-    const dimLabels: Record<string, string> = {
-        completeness: "Data Completeness",
-        accuracy: "Data Accuracy",
-        connectivity: "Connectivity & Integration",
-        identity: "Identity Resolution",
-        semantic: "Metadata & Semantics",
-        governance: "Governance Maturity",
-        usecase: "AI Use Case Clarity",
-    };
+  const dimLabels: Record<string, string> = {
+    completeness: "Data Completeness",
+    accuracy: "Data Accuracy",
+    connectivity: "Connectivity & Integration",
+    identity: "Identity Resolution",
+    semantic: "Metadata & Semantics",
+    governance: "Governance Maturity",
+    usecase: "AI Use Case Clarity",
+  };
 
-    const dimRows = dims.map(d => {
-        const s = scores[d] || 0;
-        const pct = (s / 5) * 100;
-        const color = s >= 4 ? "#2D7A3A" : s >= 3 ? "#D4930D" : "#C62828";
-        return `
+  const dimRows = dims.map(d => {
+    const s = scores[d] || 0;
+    const pct = (s / 5) * 100;
+    const color = s >= 4 ? "#2D7A3A" : s >= 3 ? "#D4930D" : "#C62828";
+    return `
       <tr>
         <td style="padding: 10px 12px; font-size: 13px; font-weight: 600;">${dimLabels[d] || d}</td>
         <td style="padding: 10px 12px; text-align: center; font-weight: 700; color: ${color};">${s}/5</td>
@@ -72,9 +78,9 @@ function buildReportHtml(assessment: any): string {
         </td>
       </tr>
     `;
-    }).join("");
+  }).join("");
 
-    return `
+  return `
     <!DOCTYPE html>
     <html>
     <head>
