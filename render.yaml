@@ -2,6 +2,7 @@ services:
   - type: web
     name: scorecard-backend-docker
     env: docker
+    plan: free # <=== THIS FORCES THE FREE TIER
     dockerfilePath: ./backend/Dockerfile
     repo: https://github.com/muvvadhanush/algoleap-agentforce-scorecard
     branch: main
