@@ -4,6 +4,13 @@ import path from "path";
 import prisma from "../lib/db.js";
 import { generatePdf } from "../services/puppeteer.js";
 
+import { createClient } from "@supabase/supabase-js";
+
+// Initialize Supabase Client
+const supabaseUrl = process.env.SUPABASE_URL || "";
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || "";
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 const router = Router();
 
 // POST /api/assessments — Submit a new assessment
@@ -29,22 +36,34 @@ router.post("/", async (req: Request, res: Response) => {
         // Generate the PDF synchronously before responding
         try {
             const pdfBuffer = await generatePdf(assessment.shareId);
-
-            // Save PDF to local public folder (this logic will be swapped for Supabase Storage later)
-            const pdfsDir = path.join(process.cwd(), "public", "pdfs");
-            if (!fs.existsSync(pdfsDir)) {
-                fs.mkdirSync(pdfsDir, { recursive: true });
-            }
             const pdfFileName = `${assessment.shareId}.pdf`;
-            fs.writeFileSync(path.join(pdfsDir, pdfFileName), pdfBuffer);
 
-            // Update DB with the URL
-            const pdfUrl = `/pdfs/${pdfFileName}`;
+            // Upload directly to Supabase Storage Bucket ('pdfs')
+            const { data, error } = await supabase.storage
+                .from("pdfs")
+                .upload(pdfFileName, pdfBuffer, {
+                    contentType: "application/pdf",
+                    upsert: true,
+                });
+
+            if (error) {
+                console.error("[Supabase Upload Error]", error);
+                throw error;
+            }
+
+            // Get the permanently hosted public URL
+            const { data: publicData } = supabase.storage
+                .from("pdfs")
+                .getPublicUrl(pdfFileName);
+                
+            const pdfUrl = publicData.publicUrl;
+
+            // Update DB with the cloud URL
             assessment = await prisma.assessment.update({
                 where: { id: assessment.id },
                 data: { pdfUrl } as any,
             });
-            console.log(`[PDF Generated] Saved to ${pdfUrl}`);
+            console.log(`[PDF Generated] Uploaded to Supabase Storage: ${pdfUrl}`);
         } catch (pdfError) {
             console.error("[PDF Generation Error]", pdfError);
             // We continue even if PDF fails, so the user isn't completely blocked
