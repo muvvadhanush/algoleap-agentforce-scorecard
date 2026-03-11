@@ -87,10 +87,16 @@ export default function Home() {
   // ── Derived from data ──
   const personas: Persona[] = data?.personas || [];
   const clouds: string[] = data?.clouds || [];
-  const dims: Dimension[] = persona && data ? (data.dimensions[persona] || []) : [];
+  const dims: Dimension[] = persona && data 
+    ? [...(data.dimensions[persona] || [])].sort((a, b) => a.order - b.order) 
+    : [];
   const tiers: Tier[] = data?.tiers || [];
   const DEFAULT_TIER: Tier = { min: 0, label: '—', color: '#888', bg: '#f0f0f0' };
-  const totalScore = Object.values(scores).reduce((a, b) => a + b, 0);
+  
+  // Weighted score calculation: sum(score * weight) / 5
+  // Since weights sum to 100, max score is 500. Dividing by 5 gives 0-100.
+  const totalScore = dims.reduce((acc, d) => acc + ((scores[d.id] || 0) * d.weight) / 5, 0);
+  
   const tier = getTier(totalScore, tiers) || DEFAULT_TIER;
   const answered = Object.keys(scores).length;
 
@@ -194,16 +200,16 @@ export default function Home() {
 
   const pickLevel = (dimId: string, score: number) => {
     setScores(prev => ({ ...prev, [dimId]: score }));
-    if (wizStep < 6) setTimeout(() => setWizStep(w => w + 1), 320);
+    if (wizStep < dims.length - 1) setTimeout(() => setWizStep(w => w + 1), 320);
   };
 
   const buildShareUrl = () => {
     const base = typeof window !== "undefined" ? window.location.href.split("#")[0] : "";
-    return `${base}#score=${totalScore}&tier=${encodeURIComponent(tier.label)}&persona=${persona}`;
+    return `${base}#score=${Math.round(totalScore)}&tier=${encodeURIComponent(tier.label)}&persona=${persona}`;
   };
 
   const shareOn = (platform: string) => {
-    const msg = `I just scored ${totalScore}/35 on the Algoleap Agentforce Readiness Scorecard — "${tier.label}". How ready is your data for AI agents? 🤖`;
+    const msg = `I just scored ${Math.round(totalScore)}/100 on the Algoleap Agentforce Readiness Scorecard — "${tier.label}". How ready is your data for AI agents? 🤖`;
     const url = buildShareUrl();
     const urls: Record<string, string> = {
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&summary=${encodeURIComponent(msg)}`,
@@ -367,9 +373,9 @@ export default function Home() {
                       <div className="wiz-head">
                         <div className="wiz-meta">
                           <div className="wiz-title">{pLabel} Assessment</div>
-                          <div className="wiz-prog-lbl">{answered} / 7 answered</div>
+                          <div className="wiz-prog-lbl">{answered} / {dims.length} answered</div>
                         </div>
-                        <div className="wiz-bar"><div className="wiz-fill" style={{ width: `${(answered / 7) * 100}%` }} /></div>
+                        <div className="wiz-bar"><div className="wiz-fill" style={{ width: `${(answered / dims.length) * 100}%` }} /></div>
                         <div className="wiz-dots">
                           {dims.map((d, i) => {
                             const done = !!scores[d.id];
@@ -392,11 +398,11 @@ export default function Home() {
                       <div className="wiz-nav">
                         <button className="btn-ghost" disabled={wizStep === 0} onClick={() => setWizStep(w => Math.max(0, w - 1))}>← Previous</button>
                         <div style={{ display: "flex", gap: 10 }}>
-                          {wizStep < 6 && <button className="btn-ghost" disabled={!scores[dim.id]} onClick={() => setWizStep(w => w + 1)}>Next →</button>}
-                          {wizStep === 6 && (
+                          {wizStep < dims.length - 1 && <button className="btn-ghost" disabled={!scores[dim.id]} onClick={() => setWizStep(w => w + 1)}>Next →</button>}
+                          {wizStep === dims.length - 1 && (
                             <button
                               className="btn-results"
-                              disabled={answered < 7 || isGenerating}
+                              disabled={answered < dims.length || isGenerating}
                               onClick={generateResults}
                             >
                               {isGenerating ? "Generating Report..." : "See My Results ✓"}
@@ -413,7 +419,7 @@ export default function Home() {
             {/* ════ RESULTS ════ */}
             {view === "results" && totalScore > 0 && data && (() => {
               const circ = 283;
-              const pct = totalScore / 35;
+              const pct = totalScore / 100;
               const steps = getNextSteps(totalScore, persona || "business", data.nextSteps);
               return (
                 <>
@@ -436,8 +442,8 @@ export default function Home() {
                               style={{ transition: "stroke-dasharray .8s ease" }} />
                           </svg>
                           <div className="score-inner">
-                            <span className="score-n" style={{ color: tier.color }}>{totalScore}</span>
-                            <span className="score-of">of 35</span>
+                            <span className="score-n" style={{ color: tier.color }}>{Math.round(totalScore)}</span>
+                            <span className="score-of">of 100</span>
                           </div>
                         </div>
                         <div style={{ flex: 1, minWidth: 200 }}>
@@ -599,7 +605,7 @@ export default function Home() {
           <div className="modal-sub">Share your Agentforce readiness score with your team or on social media.</div>
           <div className="share-score-display">
             <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.5, color: "var(--muted)", marginBottom: 6 }}>Agentforce Readiness Score</div>
-            <div className="share-big-score" style={{ color: tier.color }}>{totalScore}/35</div>
+            <div className="share-big-score" style={{ color: tier.color }}>{Math.round(totalScore)}/100</div>
             <div className="share-big-tier" style={{ color: tier.color }}>{tier.label}</div>
           </div>
           <div style={{ fontSize: 12, fontWeight: 700, color: "var(--sub)", marginBottom: 10, textTransform: "uppercase", letterSpacing: .5 }}>Share on</div>

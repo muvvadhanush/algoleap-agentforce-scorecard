@@ -1,0 +1,335 @@
+{
+    "dimensions": [
+        {
+            "id": "data_readiness",
+            "title": "Data Readiness",
+            "description": "Evaluate the quality, accessibility, and governance of organizational data.",
+            "weight": 0.25,
+            "questions": [
+                {
+                    "id": "data_accessibility",
+                    "order": 1,
+                    "question": "How accessible is your operational data across teams?",
+                    "options": [
+                        {
+                            "label": "Data is siloed across systems",
+                            "score": 1
+                        },
+                        {
+                            "label": "Data is partially integrated",
+                            "score": 2
+                        },
+                        {
+                            "label": "Data is mostly centralized",
+                            "score": 3
+                        },
+                        {
+                            "label": "Data is centralized and easily accessible",
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "data_quality",
+                    "order": 2,
+                    "question": "How would you rate the quality and reliability of your business data?",
+                    "options": [
+                        {
+                            "label": "Poor quality with many inconsistencies",
+                            "score": 1
+                        },
+                        {
+                            "label": "Moderate quality with occasional issues",
+                            "score": 2
+                        },
+                        {
+                            "label": "Generally reliable data",
+                            "score": 3
+                        },
+                        {
+                            "label": "Highly accurate and governed data",
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "data_governance",
+                    "order": 3,
+                    "question": "Does your organization have formal data governance policies?",
+                    "options": [
+                        {
+                            "label": "No governance framework",
+                            "score": 1
+                        },
+                        {
+                            "label": "Limited governance policies",
+                            "score": 2
+                        },
+                        {
+                            "label": "Defined governance policies",
+                            "score": 3
+                        },
+                        {
+                            "label": "Strong governance with monitoring",
+                            "score": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "process_bottlenecks",
+            "title": "Process Bottlenecks",
+            "description": "Assess operational inefficiencies and opportunities for automation.",
+            "weight": 0.20,
+            "questions": [
+                {
+                    "id": "manual_work",
+                    "order": 4,
+                    "question": "How much manual work exists in your core business processes?",
+                    "options": [
+                        {
+                            "label": "Mostly manual",
+                            "score": 1
+                        },
+                        {
+                            "label": "Some automation but many manual tasks",
+                            "score": 2
+                        },
+                        {
+                            "label": "Mostly automated processes",
+                            "score": 3
+                        },
+                        {
+                            "label": "Highly automated workflows",
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "workflow_visibility",
+                    "order": 5,
+                    "question": "How visible are workflow bottlenecks across your organization?",
+                    "options": [
+                        {
+                            "label": "Not tracked or measured",
+                            "score": 1
+                        },
+                        {
+                            "label": "Some processes monitored",
+                            "score": 2
+                        },
+                        {
+                            "label": "Key processes monitored",
+                            "score": 3
+                        },
+                        {
+                            "label": "Full process analytics and monitoring",
+                            "score": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "ai_maturity",
+            "title": "AI Maturity",
+            "description": "Understand the current level of AI adoption and experimentation.",
+            "weight": 0.20,
+            "questions": [
+                {
+                    "id": "ai_usage",
+                    "order": 6,
+                    "question": "Does your organization currently use AI tools in operations?",
+                    "options": [
+                        {
+                            "label": "No AI usage",
+                            "score": 1
+                        },
+                        {
+                            "label": "Experimental or pilot AI usage",
+                            "score": 2
+                        },
+                        {
+                            "label": "AI used in specific workflows",
+                            "score": 3
+                        },
+                        {
+                            "label": "AI widely used across departments",
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "ai_strategy",
+                    "order": 7,
+                    "question": "Does your organization have an AI strategy or roadmap?",
+                    "options": [
+                        {
+                            "label": "No AI strategy",
+                            "score": 1
+                        },
+                        {
+                            "label": "Initial discussions about AI",
+                            "score": 2
+                        },
+                        {
+                            "label": "Defined AI roadmap",
+                            "score": 3
+                        },
+                        {
+                            "label": "AI strategy integrated into business planning",
+                            "score": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "team_structure",
+            "title": "Team Capability",
+            "description": "Assess whether the organization has the talent required to adopt AI.",
+            "weight": 0.15,
+            "questions": [
+                {
+                    "id": "technical_skills",
+                    "order": 8,
+                    "question": "Does your organization have employees with AI or data expertise?",
+                    "options": [
+                        {
+                            "label": "No internal expertise",
+                            "score": 1
+                        },
+                        {
+                            "label": "Limited technical expertise",
+                            "score": 2
+                        },
+                        {
+                            "label": "Dedicated data or AI specialists",
+                            "score": 3
+                        },
+                        {
+                            "label": "Established AI and data teams",
+                            "score": 4
+                        }
+                    ]
+                },
+                {
+                    "id": "change_readiness",
+                    "order": 9,
+                    "question": "How prepared is your organization to adopt new technologies like AI?",
+                    "options": [
+                        {
+                            "label": "Low readiness",
+                            "score": 1
+                        },
+                        {
+                            "label": "Moderate openness",
+                            "score": 2
+                        },
+                        {
+                            "label": "High willingness to adopt technology",
+                            "score": 3
+                        },
+                        {
+                            "label": "Innovation-driven culture",
+                            "score": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "business_pain_points",
+            "title": "Business Pain Points",
+            "description": "Identify areas where AI could provide quick operational improvements.",
+            "weight": 0.10,
+            "questions": [
+                {
+                    "id": "operational_challenges",
+                    "order": 10,
+                    "question": "What level of operational inefficiencies exist today?",
+                    "options": [
+                        {
+                            "label": "Significant inefficiencies",
+                            "score": 1
+                        },
+                        {
+                            "label": "Some inefficiencies",
+                            "score": 2
+                        },
+                        {
+                            "label": "Minor inefficiencies",
+                            "score": 3
+                        },
+                        {
+                            "label": "Highly optimized operations",
+                            "score": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "crm_landscape",
+            "title": "CRM & Technology Landscape",
+            "description": "Understand the technology ecosystem used to support customer operations.",
+            "weight": 0.10,
+            "questions": [
+                {
+                    "id": "crm_platform",
+                    "order": 11,
+                    "question": "Which CRM platform does your organization primarily use?",
+                    "options": [
+                        {
+                            "label": "No CRM system",
+                            "score": 1
+                        },
+                        {
+                            "label": "Basic CRM usage",
+                            "score": 2
+                        },
+                        {
+                            "label": "Advanced CRM usage",
+                            "score": 3
+                        },
+                        {
+                            "label": "Highly integrated CRM ecosystem",
+                            "score": 4
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "tiers": [
+        {
+            "name": "Foundational",
+            "range": [
+                0,
+                40
+            ]
+        },
+        {
+            "name": "Developing",
+            "range": [
+                41,
+                60
+            ]
+        },
+        {
+            "name": "Advanced",
+            "range": [
+                61,
+                80
+            ]
+        },
+        {
+            "name": "Leading",
+            "range": [
+                81,
+                100
+            ]
+        }
+    ]
+}

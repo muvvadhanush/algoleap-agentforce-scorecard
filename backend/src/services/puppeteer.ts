@@ -108,7 +108,7 @@ function buildReportHtml(assessment: any): string {
         <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 28px; padding: 24px; background: #f7f9f6; border-radius: 12px;">
           <div style="text-align: center;">
             <div style="font-size: 48px; font-weight: 800; color: #2D5A27;">${assessment.score}</div>
-            <div style="font-size: 12px; color: #888;">of 35</div>
+            <div style="font-size: 12px; color: #888;">of 100</div>
           </div>
           <div>
             <div style="display: inline-block; padding: 5px 14px; border-radius: 16px; background: #E8F5E3; color: #2D5A27; font-weight: 700; font-size: 14px; margin-bottom: 6px;">
