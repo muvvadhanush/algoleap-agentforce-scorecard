@@ -333,14 +333,6 @@ export default function Home() {
                   <button id="cta-start-assessment" className="hero-cta" onClick={() => setShowUserModal(true)} aria-label="Start your free Agentforce readiness assessment">Start Your Assessment →</button>
                   <p className="hero-note">No credit card · 3 minutes · Instant results</p>
                 </section>
-                <section className="proof-bar" aria-label="Algoleap credentials and statistics">
-                  <div className="proof-inner">
-                    <div className="proof-item"><div className="proof-num" aria-label="36 plus Salesforce certifications">36+</div><div className="proof-lbl">SF Certifications</div></div>
-                    <div className="proof-item"><div className="proof-num" aria-label="50 plus AI projects completed">50+</div><div className="proof-lbl">AI Projects</div></div>
-                    <div className="proof-item"><div className="proof-num" aria-label="14 plus Salesforce implementations">14+</div><div className="proof-lbl">SF Implementations</div></div>
-                    <div className="proof-item"><div className="proof-num" aria-label="24 plus years of leadership">24+</div><div className="proof-lbl">Years Leadership</div></div>
-                  </div>
-                </section>
                 <section className="section" id="how-it-works" aria-labelledby="how-it-works-heading">
                   <h2 id="how-it-works-heading" className="section-title">How It Works</h2>
                   <p className="section-sub">Three steps. Three minutes. A clear roadmap to Agentforce.</p>
